@@ -15,7 +15,10 @@ public class DBConnection {
             String pass = System.getenv("DB_PASS");
 
             con = DriverManager.getConnection(url, user, pass);
+            System.out.println("DB Connected Successfully");
+
         } catch (Exception e) {
+            System.out.println("DB Connection FAILED");
             e.printStackTrace();
         }
         return con;
