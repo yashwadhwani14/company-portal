@@ -1,9 +1,9 @@
 FROM tomcat:10.1-jdk17
 
-# Remove default Tomcat apps
-RUN rm -rf /usr/local/tomcat/webapps/*
+# Remove default ROOT app
+RUN rm -rf /usr/local/tomcat/webapps/ROOT
 
 # Copy JSP files to ROOT context
-COPY "yashwadhwani14 Web content"/ /usr/local/tomcat/webapps/ROOT/
+COPY WebContent/ /usr/local/tomcat/webapps/ROOT/
 
 EXPOSE 8080
