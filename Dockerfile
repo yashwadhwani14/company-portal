@@ -1,9 +1,10 @@
-FROM tomcat:10.1-jdk17
+FROM tomcat:9.0-jdk17
 
-# Remove default ROOT app
-RUN rm -rf /usr/local/tomcat/webapps/ROOT
+RUN rm -rf /usr/local/tomcat/webapps/*
 
-# Copy JSP files to ROOT context
 COPY WebContent/ /usr/local/tomcat/webapps/ROOT/
+COPY build/classes/ /usr/local/tomcat/webapps/ROOT/WEB-INF/classes/
 
 EXPOSE 8080
+
+CMD ["catalina.sh", "run"]
