@@ -4,6 +4,6 @@ FROM tomcat:10.1-jdk17
 RUN rm -rf /usr/local/tomcat/webapps/*
 
 # Copy JSP files to ROOT context
-COPY CompanyPortal/WebContent/ /usr/local/tomcat/webapps/ROOT/
+COPY "yashwadhwani14 Web content"/ /usr/local/tomcat/webapps/ROOT/
 
 EXPOSE 8080
