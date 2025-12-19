@@ -1,12 +1,11 @@
 FROM tomcat:10.1-jdk17
 
+# Remove default apps
 RUN rm -rf /usr/local/tomcat/webapps/*
 
-COPY . /usr/local/tomcat/webapps/ROOT
+# Copy JSP files (WebContent) to ROOT
+COPY WebContent/ /usr/local/tomcat/webapps/ROOT/
 
-# Render provides PORT env variable
-ENV CATALINA_OPTS="-Dserver.port=${PORT}"
-
-EXPOSE 10000
+EXPOSE 8080
 
 CMD ["catalina.sh", "run"]
